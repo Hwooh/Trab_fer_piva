@@ -20,7 +20,7 @@ import java.util.Arrays;
 
 /**
  *
- * @Grupo Eduardo Neves, Esther Siqueira, Gabriel Macario, Pablo Relvas
+ * @author pablo
  */
 public class Trab{
     private List<String[]> dado = new ArrayList<>();
@@ -56,7 +56,7 @@ public class Trab{
     File f25 = new File("cdmercadoria_cntr.txt");
     File f26 = new File("pesocarga_cntr.txt");
      
-    public static void main(String... args) throws IOException {     
+    public static void main(String... args) throws IOException, InterruptedException {     
         Info info = new Info();
         info.getProcessador();
         info.getDisco();
@@ -71,7 +71,7 @@ public class Trab{
         
     }
     
-     public void armazena() throws IOException {
+     public void armazena() throws IOException, InterruptedException {
         long start = System.currentTimeMillis();
         String arquivoCSV = "C:\\Users\\pablo\\Desktop\\dataset_00_sem_virg.csv";
         BufferedReader br = null;
@@ -88,7 +88,6 @@ public class Trab{
         long start2 = System.currentTimeMillis();
             String[] coluna = linha.split(csvDivisor);    
             dado.add(coluna);        
-            
             if(i == 1000000 || j == 14665111){
             long elapsed2 = System.currentTimeMillis() - start2;
             tempo1 += elapsed2;
@@ -99,6 +98,7 @@ public class Trab{
                long start3 = System.currentTimeMillis();
                i = 0;
                geraArq();
+               ThreadPro.join();
                dado.clear();
                long elapsed3 = System.currentTimeMillis() - start3;
                tempo1 += elapsed3;

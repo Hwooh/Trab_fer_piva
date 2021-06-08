@@ -20,7 +20,7 @@ import java.util.Arrays;
 
 /**
  *
- * @author pablo
+ * @Grupo Eduardo Neves, Esther Siqueira, Gabriel Macario, Pablo Relvas
  */
 public class Trab{
     private List<String[]> dado = new ArrayList<>();

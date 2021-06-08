@@ -20,7 +20,7 @@ import java.util.Arrays;
 
 /**
  *
- * @Grupo Eduardo Neves, Esther Siqueira, Gabriel Macario, Pablo Relvas
+ * @author Eduardo Neves, Esther Siqueira, Gabriel Macario, Pablo Relvas
  */
 public class Trab{
     private List<String[]> dado = new ArrayList<>();
@@ -86,8 +86,10 @@ public class Trab{
         tempo1 += elapsed;
         while ((linha = br.readLine()) != null) {
         long start2 = System.currentTimeMillis();
-            String[] coluna = linha.split(csvDivisor);    
-            dado.add(coluna);        
+            String[] coluna = linha.split(csvDivisor);   
+            if(j != 0 ){
+            dado.add(coluna);
+            }
             if(i == 1000000 || j == 14665111){
             long elapsed2 = System.currentTimeMillis() - start2;
             tempo1 += elapsed2;
